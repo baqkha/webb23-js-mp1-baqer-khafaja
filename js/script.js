@@ -58,17 +58,17 @@ const midDiv = document.createElement("div");
 midDiv.style.width = "15%";
 containerDiv.appendChild(midDiv);
 
-const rightCounterDiv = document.createElement("div");
-midDiv.appendChild(rightCounterDiv);
-rightCounterDiv.style.backgroundColor = "hsl(240, 71%, 80%)";
-rightCounterDiv.style.padding = "10px";
-rightCounterDiv.style.width = "40px";
-rightCounterDiv.style.textAlign = "center";
+const midCounterDiv = document.createElement("div");
+midDiv.appendChild(midCounterDiv);
+midCounterDiv.style.backgroundColor = "hsl(240, 71%, 80%)";
+midCounterDiv.style.padding = "10px";
+midCounterDiv.style.width = "40px";
+midCounterDiv.style.textAlign = "center";
 
 for (let i = 9; i >= 0; i--) {
     const counter = document.createElement("p");
     counter.innerHTML = `${i}`;
-    rightCounterDiv.appendChild(counter);
+    midCounterDiv.appendChild(counter);
     counter.style.margin = "0";
 
     if (i % 2) {
@@ -81,7 +81,7 @@ for (let i = 9; i >= 0; i--) {
     }
     
     if (i === 8) {
-        counter.style.backgroundColor = rightCounterDiv.style.backgroundColor;
+        counter.style.backgroundColor = midCounterDiv.style.backgroundColor;
     }
 }
 
@@ -90,19 +90,19 @@ const rightDiv = document.createElement("div");
 rightDiv.style.width = "15%";
 containerDiv.appendChild(rightDiv);
 
-const middleCounterDiv = document.createElement("div");
-rightDiv.appendChild(middleCounterDiv);
-middleCounterDiv.style.backgroundColor = "hsl(240, 71%, 80%)";
-middleCounterDiv.style.padding = "10px";
-middleCounterDiv.style.width = "40px";
-middleCounterDiv.style.textAlign = "right";
+const rightCounterDiv = document.createElement("div");
+rightDiv.appendChild(rightCounterDiv);
+rightCounterDiv.style.backgroundColor = "hsl(240, 71%, 80%)";
+rightCounterDiv.style.padding = "10px";
+rightCounterDiv.style.width = "40px";
+rightCounterDiv.style.textAlign = "right";
 
 const numberCounter = ["ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio", "tio"];
 
 for (let i = 0; i < 10; i++) {
     const counter = document.createElement("p");
     counter.innerHTML = `${numberCounter[i]}`;
-    middleCounterDiv.appendChild(counter);
+    rightCounterDiv.appendChild(counter);
     counter.style.margin = "0";
 
     if (i % 2) {
@@ -115,6 +115,6 @@ for (let i = 0; i < 10; i++) {
     }
     
     if (i === 5) {
-        counter.style.backgroundColor = rightCounterDiv.style.backgroundColor;
+        counter.style.backgroundColor = midCounterDiv.style.backgroundColor;
     }
 }
