@@ -1,0 +1,120 @@
+
+//Rad 1 - 5
+for (let i = 1; i < 6; i++) {
+    const rad = document.createElement("p");
+    document.body.appendChild(rad);
+    rad.innerHTML = `Rad  ${i}`;
+    rad.style.fontSize = `${5 + i*10}px`;
+    rad.style.textAlign = "center";
+    rad.style.backgroundColor = `hsl(${153 + i*6}, 100%, 50%)`;
+}
+
+// 3 loops in a box
+const containerDiv = document.createElement("div");
+document.body.appendChild(containerDiv);
+
+containerDiv.style.border = "solid 2px black";
+containerDiv.style.height = "300px"; 
+containerDiv.style.display = "flex";
+containerDiv.style.justifyContent = "space-around";
+containerDiv.style.alignItems = "center";
+
+
+//Vänster Div
+const leftDiv = document.createElement("div");
+leftDiv.style.width = "15%";
+containerDiv.appendChild(leftDiv);
+
+const leftCounterDiv = document.createElement("div");
+leftDiv.appendChild(leftCounterDiv);
+leftCounterDiv.style.backgroundColor = "hsl(240, 71%, 80%)";
+leftCounterDiv.style.padding = "10px";
+leftCounterDiv.style.width = "40px";
+
+for (let i = 0; i < 10; i++) {
+    const counter = document.createElement("p");
+    counter.innerHTML = `${i}`;
+    leftCounterDiv.appendChild(counter);
+    counter.style.padding = "0";
+    counter.style.margin = "0";
+
+    if (i % 2) {
+        counter.style.backgroundColor = "white";
+    }
+
+    else {
+        counter.style.color = "white";
+        counter.style.backgroundColor = "black";
+    }
+
+    if (i === 4) {
+        counter.style.backgroundColor = leftCounterDiv.style.backgroundColor;
+    }
+    
+}
+
+//Mitten Div
+const midDiv = document.createElement("div");
+midDiv.style.width = "15%";
+containerDiv.appendChild(midDiv);
+
+const rightCounterDiv = document.createElement("div");
+midDiv.appendChild(rightCounterDiv);
+rightCounterDiv.style.backgroundColor = "hsl(240, 71%, 80%)";
+rightCounterDiv.style.padding = "10px";
+rightCounterDiv.style.width = "40px";
+rightCounterDiv.style.textAlign = "center";
+
+for (let i = 9; i >= 0; i--) {
+    const counter = document.createElement("p");
+    counter.innerHTML = `${i}`;
+    rightCounterDiv.appendChild(counter);
+    counter.style.margin = "0";
+
+    if (i % 2) {
+        counter.style.backgroundColor = "white";
+    } 
+    
+    else {
+        counter.style.color = "white";
+        counter.style.backgroundColor = "black";
+    }
+    
+    if (i === 8) {
+        counter.style.backgroundColor = rightCounterDiv.style.backgroundColor;
+    }
+}
+
+//Höger Div
+const rightDiv = document.createElement("div");
+rightDiv.style.width = "15%";
+containerDiv.appendChild(rightDiv);
+
+const middleCounterDiv = document.createElement("div");
+rightDiv.appendChild(middleCounterDiv);
+middleCounterDiv.style.backgroundColor = "hsl(240, 71%, 80%)";
+middleCounterDiv.style.padding = "10px";
+middleCounterDiv.style.width = "40px";
+middleCounterDiv.style.textAlign = "right";
+
+const numberCounter = ["ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio", "tio"];
+
+for (let i = 0; i < 10; i++) {
+    const counter = document.createElement("p");
+    counter.innerHTML = `${numberCounter[i]}`;
+    middleCounterDiv.appendChild(counter);
+    counter.style.margin = "0";
+
+    if (i % 2) {
+        counter.style.backgroundColor = "white";
+    } 
+    
+    else {
+        counter.style.color = "white";
+        counter.style.backgroundColor = "black";
+    }
+    
+    if (i === 5) {
+        counter.style.backgroundColor = rightCounterDiv.style.backgroundColor;
+    }
+}
